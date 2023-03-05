@@ -18,6 +18,9 @@ const DramaSeasons = props => {
   const [dramaSeasons, setDramaSeasons] = useState([]);
 
   useEffect(() => {
+    navigation.setOptions({
+      title: dramaName,
+    });
     (async () => {
       const season = await AsyncStorage.getItem(dramaName);
       if (season !== null) {
@@ -31,9 +34,15 @@ const DramaSeasons = props => {
   return (
     <FlatList
       data={dramaSeasons}
+      showsVerticalScrollIndicator={false}
       renderItem={({item, index}) => (
         <TouchableOpacity
-          style={styles.bodyContentItem}
+          style={[
+            styles.bodyContentItem,
+            {
+              marginBottom: dramaSeasons.length - 1 === index ? 40 : 10,
+            },
+          ]}
           onPress={() => {
             navigation.navigate('DramaEpisodes', {
               dramaName: dramaName,
@@ -84,13 +93,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   bodyContentItem: {
-    width: '100%',
+    width: '97%',
     height: 50,
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignSelf: 'center',
     paddingLeft: 10,
-    marginBottom: 1,
+    marginVertical: 5,
+    borderRadius: 10,
   },
   bodyContentItemImage: {
     width: '100%',

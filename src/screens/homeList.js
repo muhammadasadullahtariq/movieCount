@@ -72,16 +72,6 @@ const GamesList = () => {
   return (
     <SafeAreaView>
       <View>
-        <ToggleButton
-          movie={selectedMovie}
-          onPress={flag => {
-            if (flag !== selectedMovie) {
-              setSelectedMovie(flag);
-              setSearchText('');
-            }
-          }}
-        />
-        <View style={{height: 20}} />
         {selectedMovie ? (
           <WaitingAlert visible={moviesLoading} />
         ) : (
@@ -96,11 +86,24 @@ const GamesList = () => {
           value={searchText}
         />
         <View style={{height: 20}} />
+        <ToggleButton
+          movie={selectedMovie}
+          onPress={flag => {
+            if (flag !== selectedMovie) {
+              setSelectedMovie(flag);
+              setSearchText('');
+            }
+          }}
+        />
+        <View style={{height: 20}} />
       </View>
 
       {selectedMovie ? (
         <FlatList
           data={movies}
+          numColumns={2}
+          contentContainerStyle={styles.contentContainer}
+          columnWrapperStyle={styles.contentContainer}
           renderItem={({item}) => <MovieListItem {...item} />}
           keyExtractor={item => item.id}
           style={styles.container}
@@ -123,6 +126,9 @@ const GamesList = () => {
       ) : (
         <FlatList
           data={dramas}
+          numColumns={2}
+          contentContainerStyle={styles.contentContainer}
+          columnWrapperStyle={styles.contentContainer}
           renderItem={({item}) => <DramaListItem {...item} />}
           keyExtractor={item => item.id}
           style={styles.container}
@@ -150,6 +156,9 @@ const GamesList = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.screenBackGroundColor,
+  },
+  contentContainer: {
+    justifyContent: 'space-evenly',
   },
 });
 

@@ -24,7 +24,6 @@ const DramaEpisodes = props => {
 
   useEffect(() => {
     navigation.setOptions({title: dramaDetail.name});
-
     (async () => {
       const episodes = await AsyncStorage.getItem(dramaDetail.name);
       if (episodes !== null) {
@@ -40,11 +39,10 @@ const DramaEpisodes = props => {
     <FlatList
       data={episodes?.episodes}
       renderItem={({item}) => (
-        <View style={styles.container}>
-          <Text>Epsiode + {item.episode}</Text>
+        <View style={[styles.container]}>
+          <Text style={styles.title}>Epsiode + {item.episode}</Text>
           <CheckBox
-            boxType="square"
-            animationDuration={0}
+            animationDuration={0.5}
             value={item.watched}
             onValueChange={newValue => {
               item.watched = newValue;
@@ -68,9 +66,14 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 10,
+    paddingVertical: 12,
+    alignSelf: 'center',
     backgroundColor: '#fff',
-    marginBottom: 1,
+    marginVertical: 5,
+    borderRadius: 10,
+    width: '97%',
   },
   title: {
     fontSize: 20,

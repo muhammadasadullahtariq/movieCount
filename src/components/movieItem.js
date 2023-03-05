@@ -29,8 +29,8 @@ const MovieListItem = props => {
           height: 250,
           width: '100%',
           resizeMode: 'stretch',
-          borderTopLeftRadius: 2,
-          borderTopRightRadius: 2,
+          borderTopLeftRadius: 18,
+          borderTopRightRadius: 18,
         }}
       />
       <View style={styles.profileContainer}>
@@ -61,43 +61,38 @@ const MovieListItem = props => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 320,
-    width: '100%',
+    height: 310,
+    width: '45%',
     backgroundColor: COLORS.white,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 2,
-    marginBottom: 5,
+    borderRadius: 18,
+    marginBottom: 15,
   },
   profileContainer: {
     padding: 10,
+    paddingLeft: 5,
     width: '100%',
-    height: 70,
+    height: 60,
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 1,
   },
-  profileImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 8,
-    resizeMode: 'contain',
-  },
   profileDetails: {
-    marginLeft: 10,
+    marginLeft: 0,
     //justifyContent: 'center',
     //backgroundColor: 'red',
     height: 100,
     width: '100%',
     justifyContent: 'center',
-    padding: 5,
+    padding: 0,
   },
   name: {
     color: COLORS.textColor,
     fontFamily: 'Roboto',
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
-    paddingBottom: 5,
+    paddingBottom: 2,
   },
   phone: {
     color: COLORS.textLight,
