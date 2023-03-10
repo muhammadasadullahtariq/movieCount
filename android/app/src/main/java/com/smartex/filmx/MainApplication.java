@@ -1,4 +1,4 @@
-package com.filmx;
+package com.smartex.filmx;
 
 import android.app.Application;
 import android.content.Context;

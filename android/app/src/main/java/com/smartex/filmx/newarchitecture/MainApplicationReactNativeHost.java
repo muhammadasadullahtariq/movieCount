@@ -19,7 +19,7 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.pocketmoney.BuildConfig;
+import com.smartex.filmx.BuildConfig;
 import com.pocketmoney.newarchitecture.components.MainComponentsRegistry;
 import com.pocketmoney.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
