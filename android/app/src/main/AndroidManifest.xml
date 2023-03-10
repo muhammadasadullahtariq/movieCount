@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.pocketmoney">
+  package="com.filmx">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

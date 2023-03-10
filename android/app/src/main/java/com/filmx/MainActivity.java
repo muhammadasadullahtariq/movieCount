@@ -1,4 +1,4 @@
-package com.pocketmoney;
+package com.filmx;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

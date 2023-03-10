@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "971597998993",
+    "project_id": "moviecount-fde40",
+    "storage_bucket": "moviecount-fde40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971597998993:android:3f960abbba6668ad43c830",
+        "android_client_info": {
+          "package_name": "com.filmx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971597998993-s7egb2k6lt4oaj0cl97qo56italu7147.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.filmx",
+            "certificate_hash": "7bf04073f50985f3acbccd3edd309a570b5f7e77"
+          }
+        },
+        {
+          "client_id": "971597998993-srnqsuleta7vkqesuvv5mv5ha9sutnc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrlnxmckx6x0OEHnWiNwdYrTxnm7dONZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971597998993-srnqsuleta7vkqesuvv5mv5ha9sutnc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
