@@ -15,6 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Button from '../components/button';
 import * as COLORS from '../constants/colors';
+import WaitingAlert from '../components/waitingAlert';
 
 const DramaDetailScreen = props => {
   const navigation = useNavigation();
@@ -22,9 +23,9 @@ const DramaDetailScreen = props => {
     props.route.params.dramaDetail,
   );
   const [favouritedramaFlag, setFavouritedramaFlag] = useState(false);
-  const [dramaGener, setdramaGener] = useState([]);
   const [dramaCast, setdramaCast] = useState([]);
   const [dramaSeasons, setDramaSeasons] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -38,7 +39,8 @@ const DramaDetailScreen = props => {
     })();
     (async () => {
       const gener = await getdramasGener(dramaDetail.id);
-      setdramaGener(gener.genres);
+      setdramaDetail(dramaDetail);
+      setLoading(false);
       setDramaSeasons(gener.seasons);
       const cast = await getdramaCast(dramaDetail.id);
       setdramaCast(cast.cast);
@@ -90,7 +92,11 @@ const DramaDetailScreen = props => {
     await AsyncStorage.setItem(dramaDetail.name, dramaSeasonsJson);
   };
 
-  return (
+  return loading ? (
+    <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+      <WaitingAlert />
+    </View>
+  ) : (
     <ScrollView>
       <View style={styles.imageContainer}>
         <Image
@@ -179,7 +185,7 @@ const DramaDetailScreen = props => {
             marginLeft: 10,
           }}
           horizontal={true}>
-          {dramaGener.map((gener, index) => {
+          {dramaDetail?.genres?.map((gener, index) => {
             return (
               <View key={index} style={styles.gener}>
                 <Text style={styles.generName}>{gener.name}</Text>

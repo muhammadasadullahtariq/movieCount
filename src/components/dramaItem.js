@@ -15,7 +15,7 @@ const DramaListItem = props => {
 
   return (
     <TouchableOpacity
-      key={props.trackId}
+      key={props.id}
       activeOpacity={0.8}
       onPress={() => {
         navigation.navigate('DramaDetailScreen', {
@@ -51,9 +51,6 @@ const DramaListItem = props => {
           </View>
         </View>
         <View style={{flex: 1}} />
-        <View style={{height: '100%', justifyContent: 'flex-end'}}>
-          <Text style={styles.phone}>{props.releaseDate}</Text>
-        </View>
       </View>
     </TouchableOpacity>
   );

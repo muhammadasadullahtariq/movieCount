@@ -6,7 +6,7 @@ const getMoviesGener = async (id) => {
           `${API_URL}3/movie/${id}?api_key=${API_KEY}`,
         );
         const moviesGenerJson = await moviesGener.json();
-        return moviesGenerJson.genres;
+        return moviesGenerJson;
     } catch (err) {
         console.log(err);
         return "err";

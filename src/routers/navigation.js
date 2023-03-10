@@ -10,13 +10,14 @@ import MovieDetailScreen from '../screens/movieDetailScreen';
 import DramaDetailScreen from '../screens/dramaDetailScreen';
 import DramaSeasons from '../screens/dramaSeasons';
 import DramaEpisodes from '../screens/dramaEpisodes';
+import TopTen from '../screens/topTen';
 
 const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MainMenu">
+      <Stack.Navigator initialRouteName="TopTen">
         <Stack.Screen
           name="gamesList"
           component={GamesList}
@@ -57,6 +58,11 @@ const HomeStack = () => {
           name="DramaEpisodes"
           component={DramaEpisodes}
           options={{headerShown: true, title: 'Drama Episodes'}}
+        />
+        <Stack.Screen
+          name="TopTen"
+          component={TopTen}
+          options={{headerShown: true, title: 'Top Ten'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

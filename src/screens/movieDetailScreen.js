@@ -14,6 +14,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as COLORS from '../constants/colors';
+import WaitingAlert from '../components/waitingAlert';
 
 const MovieDetailScreen = props => {
   const navigation = useNavigation();
@@ -21,8 +22,8 @@ const MovieDetailScreen = props => {
     props.route.params.movieDetail,
   );
   const [favouriteMovieFlag, setFavouriteMovieFlag] = useState(false);
-  const [movieGener, setMovieGener] = useState([]);
   const [movieCast, setMovieCast] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     navigation.setOptions({
@@ -39,7 +40,8 @@ const MovieDetailScreen = props => {
     })();
     (async () => {
       const gener = await getMoviesGener(movieDetail.id);
-      setMovieGener(gener);
+      setLoading(false);
+      setMovieDetail(gener);
       const cast = await getMovieCast(movieDetail.id);
       setMovieCast(cast.cast);
     })();
@@ -74,8 +76,12 @@ const MovieDetailScreen = props => {
     }
   };
 
-  return (
-    <ScrollView >
+  return loading ? (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <WaitingAlert />
+    </View>
+  ) : (
+    <ScrollView>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -160,7 +166,7 @@ const MovieDetailScreen = props => {
             marginLeft: 10,
           }}
           horizontal={true}>
-          {movieGener.map((gener, index) => {
+          {movieDetail?.genres?.map((gener, index) => {
             return (
               <View key={index} style={styles.gener}>
                 <Text style={styles.generName}>{gener.name}</Text>
