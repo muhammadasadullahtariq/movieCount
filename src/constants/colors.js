@@ -1,5 +1,5 @@
 export const screenBackGroundColor = '#F5F5F5';
-export const primary = '#FF6666';
+export const primary = '#056399';
 export const secondryColor = '#909194';
 export const textColor = '#1A1C1E';
 export const white = '#FFFFFF';

@@ -10,7 +10,6 @@ import {IMAGE_URL} from '../constants/apiKeys';
 const MovieListItem = props => {
   const navigation = useNavigation();
   useEffect(() => {
-    console.log('movie list item', props);
     return () => {};
   }, []);
 

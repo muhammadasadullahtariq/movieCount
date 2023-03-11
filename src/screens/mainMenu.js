@@ -9,6 +9,7 @@ import GamesList from './homeList';
 import FatIcon from 'react-native-vector-icons/Fontisto';
 import LikedMovies from './likedMoviesList';
 import LikedDramas from './likedDramaList';
+import TopTen from './topTen';
 
 const Tab = createBottomTabNavigator();
 
@@ -44,6 +45,21 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
+        name="TopTen"
+        component={TopTen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <View>
+              <FatIcon
+                name="stuck-out-tongue"
+                color={focused ? COLORS.primary : COLORS.secondryColor}
+                size={25}
+              />
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Movies"
         component={LikedMovies}
         options={{
@@ -66,21 +82,6 @@ function MyTabs() {
             <View>
               <Icon
                 name="tv"
-                color={focused ? COLORS.primary : COLORS.secondryColor}
-                size={25}
-              />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="TopTen"
-        component={LikedDramas}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View>
-              <FatIcon
-                name="stuck-out-tongue"
                 color={focused ? COLORS.primary : COLORS.secondryColor}
                 size={25}
               />

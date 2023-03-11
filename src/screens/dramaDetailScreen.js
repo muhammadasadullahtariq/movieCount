@@ -16,6 +16,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Button from '../components/button';
 import * as COLORS from '../constants/colors';
 import WaitingAlert from '../components/waitingAlert';
+import appInterstitial from '../ads/Interstitial';
+import Banner from '../ads/Banner';
 
 const DramaDetailScreen = props => {
   const navigation = useNavigation();
@@ -28,6 +30,7 @@ const DramaDetailScreen = props => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    appInterstitial(() => {});
     (async () => {
       const favouritedramas = await AsyncStorage.getItem('favouritedramas');
       if (favouritedramas !== null) {
@@ -119,6 +122,7 @@ const DramaDetailScreen = props => {
           />
         </TouchableOpacity>
       </View>
+      <Banner />
       <View style={styles.textContainer}>
         <Text style={styles.title}>{dramaDetail.title}</Text>
         <Text style={styles.overview}>{dramaDetail.overview}</Text>

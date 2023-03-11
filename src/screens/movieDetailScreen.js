@@ -15,6 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import * as COLORS from '../constants/colors';
 import WaitingAlert from '../components/waitingAlert';
+import appInterstitial from '../ads/Interstitial';
 
 const MovieDetailScreen = props => {
   const navigation = useNavigation();
@@ -29,6 +30,7 @@ const MovieDetailScreen = props => {
     navigation.setOptions({
       title: movieDetail.title,
     });
+    appInterstitial(() => {});
     (async () => {
       const favouriteMovies = await AsyncStorage.getItem('favouriteMovies');
       if (favouriteMovies !== null) {
