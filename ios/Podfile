@@ -10,7 +10,7 @@ pod 'Firebase', :modular_headers => true
   pod 'GoogleUtilities', :modular_headers => true
   pod 'FirebaseCore', :modular_headers => true
 
-target 'pocketMoney' do
+target 'FilmX' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -27,7 +27,7 @@ target 'pocketMoney' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'pocketMoneyTests' do
+  target 'FilmXTests' do
     inherit! :complete
     # Pods for testing
   end
