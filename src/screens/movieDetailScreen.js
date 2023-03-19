@@ -16,6 +16,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import * as COLORS from '../constants/colors';
 import WaitingAlert from '../components/waitingAlert';
 import appInterstitial from '../ads/Interstitial';
+import Banner from '../ads/Banner';
 
 const MovieDetailScreen = props => {
   const navigation = useNavigation();
@@ -105,6 +106,7 @@ const MovieDetailScreen = props => {
           />
         </TouchableOpacity>
       </View>
+      <Banner />
       <View style={styles.textContainer}>
         <Text style={styles.overview}>{movieDetail.overview}</Text>
         <View style={{height: 10}} />

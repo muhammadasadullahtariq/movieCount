@@ -11,6 +11,7 @@ import searchDramas from '../apis/searchDramas';
 import searchMovies from '../apis/searchMovies';
 import DramaListItem from '../components/dramaItem';
 import WaitingAlert from '../components/waitingAlert';
+import Banner from '../ads/Banner';
 
 const GamesList = () => {
   const [movies, setMovies] = useState([]);
@@ -95,6 +96,8 @@ const GamesList = () => {
             }
           }}
         />
+        <View style={{height: 20}} />
+        <Banner />
         <View style={{height: 20}} />
       </View>
 

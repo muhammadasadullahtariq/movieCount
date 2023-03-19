@@ -1,5 +1,5 @@
 import React from 'react';
-import {} from 'react-native';
+import {StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MainMenu from '../screens/mainMenu';
@@ -11,12 +11,14 @@ import DramaDetailScreen from '../screens/dramaDetailScreen';
 import DramaSeasons from '../screens/dramaSeasons';
 import DramaEpisodes from '../screens/dramaEpisodes';
 import TopTen from '../screens/topTen';
+import {primary} from '../constants/colors';
 
 const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
   return (
     <NavigationContainer>
+      <StatusBar barStyle="light-content" backgroundColor={primary} />
       <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen
           name="gamesList"

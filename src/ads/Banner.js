@@ -39,6 +39,9 @@ class Banner extends Component {
         {this.props.ADMOB_BANNER_ID && (
           <BannerAd
             size={BannerAdSize.BANNER}
+            unitId={
+              Platform.OS === 'ios' ? config.banner.ios : config.banner.android
+            }
             onAdFailedToLoad={this.onAdmobBannerError}
           />
         )}

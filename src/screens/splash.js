@@ -5,6 +5,7 @@ import * as COLORS from '../constants/colors';
 import {useNavigation} from '@react-navigation/native';
 import {requestTrackingPermission} from 'react-native-tracking-transparency';
 import appInterstitial from '../ads/Interstitial';
+import splashImage from '../assets/splash.png';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -24,7 +25,14 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Movie App</Text>
+      <Image
+        source={splashImage}
+        style={{
+          width: 400,
+          height: 400,
+          resizeMode: 'contain',
+        }}
+      />
     </View>
   );
 };
