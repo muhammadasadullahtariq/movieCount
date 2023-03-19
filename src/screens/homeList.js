@@ -78,6 +78,7 @@ const GamesList = () => {
         ) : (
           <WaitingAlert visible={dramasLoading} />
         )}
+        <View style={{height: 10}} />
         <InputComponent
           placeholder={'Search'}
           onChangeText={text => {
@@ -86,7 +87,7 @@ const GamesList = () => {
           }}
           value={searchText}
         />
-        <View style={{height: 20}} />
+        <View style={{height: 10}} />
         <ToggleButton
           movie={selectedMovie}
           onPress={flag => {
@@ -96,9 +97,9 @@ const GamesList = () => {
             }
           }}
         />
-        <View style={{height: 20}} />
+        <View style={{height: 10}} />
         <Banner />
-        <View style={{height: 20}} />
+        <View style={{height: 10}} />
       </View>
 
       {selectedMovie ? (

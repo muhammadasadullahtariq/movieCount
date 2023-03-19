@@ -9,6 +9,7 @@ import {
 import * as COLORS from '../constants/colors';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import settings from '../constants/settings';
+import Banner from '../ads/Banner';
 
 const Home = ({navigation}) => {
   useEffect(() => {}, []);
@@ -26,8 +27,7 @@ const Home = ({navigation}) => {
             Share.share({
               message: 'Movie app is awesome',
             });
-          }
-          navigation.navigate(screen);
+          } else navigation.navigate(screen);
         }}>
         <Icon name={icon} size={20} color={COLORS.primary} />
         <Text style={styles.settingText}>{title}</Text>
@@ -40,6 +40,7 @@ const Home = ({navigation}) => {
       {settings.map((items, index) =>
         SettingLayout(items.title, items.icon, items.screen),
       )}
+      <Banner />
     </SafeAreaView>
   );
 };

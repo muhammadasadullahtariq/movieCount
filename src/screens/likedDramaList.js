@@ -4,6 +4,7 @@ import DramaListItem from '../components/dramaItem';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as COLORS from '../constants/colors';
 import {useIsFocused} from '@react-navigation/native';
+import Banner from '../ads/Banner';
 
 const LikedDramas = () => {
   const [likedMovies, setLikedMovies] = useState([]);
@@ -43,6 +44,7 @@ const LikedDramas = () => {
         }
         renderItem={({item}) => <DramaListItem {...item} />}
         columnWrapperStyle={styles.contentContainer}
+        numColumns={2}
         keyExtractor={item => item.id}
         style={styles.container}
       />

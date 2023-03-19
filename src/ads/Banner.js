@@ -36,7 +36,7 @@ class Banner extends Component {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        {this.props.ADMOB_BANNER_ID && (
+       
           <BannerAd
             size={BannerAdSize.BANNER}
             unitId={
@@ -44,7 +44,6 @@ class Banner extends Component {
             }
             onAdFailedToLoad={this.onAdmobBannerError}
           />
-        )}
       </View>
     );
   }

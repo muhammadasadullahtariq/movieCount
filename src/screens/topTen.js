@@ -8,6 +8,7 @@ import getComingSoonDramas from '../apis/getComingSoonDramas';
 import DramaListItem from '../components/dramaItem';
 import WaitingAlert from '../components/waitingAlert';
 import firestore from '@react-native-firebase/firestore';
+import Banner from '../ads/Banner';
 
 const GamesList = () => {
   const [movies, setMovies] = useState([]);
@@ -49,7 +50,9 @@ const GamesList = () => {
             }
           }}
         />
-        <View style={{height: 20}} />
+        <View style={{height: 10}} />
+        <Banner />
+        <View style={{height: 10}} />
       </View>
 
       {selectedMovie ? (

@@ -4,6 +4,7 @@ import MovieListItem from '../components/movieItem';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as COLORS from '../constants/colors';
 import {useIsFocused} from '@react-navigation/native';
+import Banner from '../ads/Banner';
 
 const LikedMovies = () => {
   const [likedMovies, setLikedMovies] = useState([]);
@@ -42,6 +43,7 @@ const LikedMovies = () => {
           </View>
         }
         renderItem={({item}) => <MovieListItem {...item} />}
+        numColumns={2}
         columnWrapperStyle={styles.contentContainer}
         keyExtractor={item => item.id}
         style={styles.container}
