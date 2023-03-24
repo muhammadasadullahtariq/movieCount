@@ -40,7 +40,6 @@ const Home = ({navigation}) => {
       {settings.map((items, index) =>
         SettingLayout(items.title, items.icon, items.screen),
       )}
-      <Banner />
     </SafeAreaView>
   );
 };

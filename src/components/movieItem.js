@@ -44,9 +44,15 @@ const MovieListItem = props => {
                 flexDirection: 'row',
                 alignContent: 'center',
                 alignItems: 'center',
+                flex: 1,
+                paddingRight: 10,
+                justifyContent: 'flex-end',
               }}>
               <Icon name="star" size={20} color={'#F5B642'} />
-              <Text style={styles.phone}>{'  ' + props.vote_average}</Text>
+              <Text style={styles.phone}>
+                
+                {' ' + parseFloat(props.vote_average).toFixed(1)}
+              </Text>
             </View>
           </View>
         </View>

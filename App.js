@@ -14,7 +14,8 @@ export default function App() {
   const appOpenAdLoaded = useRef(null);
   const appOpenListener = useRef(null);
   useEffect(() => {
-   MobileAds().initialize();
+    MobileAds().initialize();
+    //show ads when app is in background and come back to foreground
     const appStateListener = AppState.addEventListener(
       'change',
       nextAppState => {
@@ -22,11 +23,16 @@ export default function App() {
           appState.current.match(/inactive|background/) &&
           nextAppState === 'active'
         ) {
+          if (global.dueToAd) {
+            global.dueToAd = false;
+            return;
+          }
           showOpenAds();
         }
         appState.current = nextAppState;
       },
     );
+
     return () => {
       appStateListener.remove();
       if (appOpenListener && appOpenListener.current) {

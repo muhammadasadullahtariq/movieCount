@@ -23,6 +23,7 @@ const appInterstitial = next => {
 
   //add event listener
   interstitialAd.addAdEventListener(AdEventType.LOADED, () => {
+    global.dueToAd = true;
     console.log('Interstitial ad loaded');
     interstitialAd.show();
     next();
